@@ -24,6 +24,13 @@ namespace ProblematicProblem
                 Console.Write("What is your age? ");
                 int userAge = 0;
                 bool numTrue = int.TryParse(Console.ReadLine(), out userAge);
+                for (int i = 0; i < activities.Count; i++)
+                {
+                    if (activities[i] == "Wine Tasting" && userAge <= 21)
+                    {
+                        activities.Remove("Wine Tasting");
+                    }
+                }
                 Console.WriteLine();
                 Console.Write("Would you like to see the current list of activities? Sure/No thanks: ");
                 bool seeList = false;
@@ -76,13 +83,13 @@ namespace ProblematicProblem
                     }
                     Console.WriteLine();
                     int randomNumber = rng.Next(0, activities.Count);
-                    string randomActivity = activities[randomNumber];
+                    string randomActivity = "Wine Tasting";
                     Console.WriteLine($"Ah got it! {userName}, your random activity is: {randomActivity}! Is this ok or do you want to grab another activity? Keep/Redo: ");
                     Console.WriteLine();
                     string promptGen5 = Console.ReadLine();
                     if (promptGen5 == "keep") { cont = false; }
                     bool tooYoung = false;
-                    if (userAge < 21 && randomActivity == "Wine Tasting")
+                    if (userAge <= 21 && randomActivity == "Wine Tasting")
                     {
 
                         int randomNum = rng.Next(activities.Count);
