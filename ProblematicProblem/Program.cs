@@ -84,7 +84,7 @@ namespace ProblematicProblem
                     Console.WriteLine();
                     int randomNumber = rng.Next(0, activities.Count);
                     string randomActivity = "Wine Tasting";
-                    Console.WriteLine($"Ah got it! {userName}, your random activity is: {randomActivity}! Is this ok or do you want to grab another activity? Keep/Redo: ");
+                    Console.WriteLine($"Ah got it! {userName}, your random activity is: {activities[randomNumber]}! Is this ok or do you want to grab another activity? Keep/Redo: ");
                     Console.WriteLine();
                     string promptGen5 = Console.ReadLine();
                     if (promptGen5 == "keep") { cont = false; }
